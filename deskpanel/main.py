@@ -2,7 +2,6 @@ import os
 import shutil
 import ctypes
 import win32con
-import lorem
 from screeninfo import get_monitors
 from PIL import Image, ImageDraw, ImageFont
 
@@ -149,8 +148,8 @@ class Panel:
         if not self.font:
             raise Exception("Please set a valid font!")
 
-        if not os.path.exists("wallpaper/"):
-            os.mkdir("wallpaper/")
+        if not os.path.exists("../wallpaper/"):
+            os.mkdir("../wallpaper/")
 
         if saved_wallpaper and prefer_saved:
             wallpaper = saved_wallpaper
@@ -158,13 +157,13 @@ class Panel:
             wallpaper = modified_wallpaper
         else:
             wallpaper = get_wallpaper()
-            if not os.path.exists("wallpaper/saved/"):
-                os.mkdir("wallpaper/saved/")
+            if not os.path.exists("../wallpaper/saved/"):
+                os.mkdir("../wallpaper/saved/")
             saved_wallpaper = "wallpaper/saved/" + os.path.basename(wallpaper)
             shutil.copyfile(wallpaper, saved_wallpaper)
 
-        if not os.path.exists("wallpaper/modified/"):
-            os.mkdir("wallpaper/modified/")
+        if not os.path.exists("../wallpaper/modified/"):
+            os.mkdir("../wallpaper/modified/")
 
         modified_wallpaper = "wallpaper/modified/" + os.path.basename(wallpaper)
 
@@ -184,6 +183,8 @@ class Panel:
 
 
 def __test_locally():
+    import lorem
+
     panels = []
     for main_axis in ["left", "middle", "right"]:
         for cross_axis in ["top", "middle", "bottom"]:

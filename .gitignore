@@ -1,5 +1,7 @@
 venv/
 fonts/
 wallpaper/
+dist/
+*.egg-info/
 
 .idea/usage.statistics.xml
