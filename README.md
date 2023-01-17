@@ -1,5 +1,7 @@
 # Deskpanel
 
+> Warning! The application was not tested well enough! Unpredictable behavior is expected! Use at your own risk!
+
 Simple library to display useful information on the desktop.
 
 ## Installation
